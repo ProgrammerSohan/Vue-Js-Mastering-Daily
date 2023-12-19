@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- cdn new -->
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+        <!-- cdn old -->
+        <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+        <h1>Vue3 Instance Practice01</h1>
+        <div id="app">
+            <h1>{{gretting}}</h1>
+            <h1>Greeting2 {{ greeting2 }}</h1>
+            <h1>Greeting3 {{greeting3}}</h1>
+            <h2>Is it True: {{ isItTrue ? 'Yes': 'No'}}</h2>
+            <h2>Is it False: {{isItFalse ? 'Yes': 'No'}}</h2>
+            <h3>{{array[1]}}</h3>
+            <h3>{{array2[1]}}</h3>
+            <h3>{{obj.car}}</h3>
+            <h3>{{obj2.name}}</h3>
+            <h3>{{ func1() }}</h3>
+            <h3>{{ function2()}}</h3>
+
+        </div>
+   
+</body>
+<script>
+    const date = new Date().toLocaleString()
+    const date2 = new Date().toLocaleDateString()
+    const date3 = new Date().toLocaleTimeString()
+
+    const App = {
+        data(){
+            return {
+                gretting: 'Hello Dunia, Today is ' + date,
+                greeting2: "Hi, Sohan!, today is " + date2,
+                greeting3: "Today is " + date3,
+                isItTrue:false,
+                isItFalse:true,
+                array:['apple','orange'],
+                array2:['book','pen'],
+                obj:{
+                    car:'Toyota'
+                },
+                obj2:{
+                    name:'sohan'
+                },
+                func1:()=>{
+                    return 'I am function1'
+                },
+                function2:()=>{
+                    return 'I am function2'
+                }
+
+            }
+
+        }
+
+    }
+
+    Vue.createApp(App).mount('#app')
+</script>
+</html>
