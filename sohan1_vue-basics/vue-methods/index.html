@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Method</title>
+     <!-- cdn new -->
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+        <!-- cdn old -->
+        <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <h1>Vue Js 3 Methods</h1>
+    <div id="app">
+        <p>{{ welcome() }}</p>
+    </div>
+    
+</body>
+<script>
+    const date = new Date().toLocaleString()
+    const App = {
+        data(){
+            return {
+                greeting: 'Hello, today is ' + date,
+                isItTrue: true,
+                array:['Tomas','Alva','Edison'],
+                obj1:{
+                    car:'Lexus'
+                },
+                func1:()=>{
+                    return "Message of func1"
+                }
+
+            }
+        },
+        methods: {
+            welcome(){
+                const randomName = this.array[Math.floor(Math.random() * this.array.length)]
+                if(this.isItTrue){
+                    return `${this.greeting}, my name is ${randomName}`;
+                }
+                return this.obj.car;
+            }
+        }
+
+    }
+    
+
+Vue.createApp(App).mount('#app')
+</script>
+</html>
