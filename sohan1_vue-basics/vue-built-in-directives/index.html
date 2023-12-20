@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Method</title>
+     <!-- cdn new -->
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+        <!-- cdn old -->
+        <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <h1>Vue Js 3 Built in directives</h1>
+    <div id="app">
+        <img v-bind:src="src" v-bind:alt="alt">
+        <hr/>
+        <a v-bind:href="link">Go to youtube</a>
+        <hr>
+       <p v-text="myText"></p>
+       <hr>
+       <p v-html="myHtml" style="background: green;"></p>
+    </div>
+    
+</body>
+<script>
+    const date = new Date().toLocaleString()
+    const App = {
+        data(){
+            return {
+                src:'https://picsum.photos/200/300',
+                alt:'Another image',
+                link:'http://youtube.com',
+                myText:'Hello Guys!!',
+                myHtml:'<strong>My html</strong>'
+
+            }
+
+        }
+    }
+    
+    Vue.createApp(App).mount('#app')
+</script>
+</html>
